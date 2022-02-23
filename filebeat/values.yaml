@@ -157,6 +157,10 @@ extraInitContainers: []
 # Root directory where Filebeat will write data to in order to persist registry data across pod restarts (file position and other metadata).
 hostPathRoot: /var/lib
 
+# Necessary when using autodiscovery; avoid mounting it otherwise
+# See: https://www.elastic.co/guide/en/beats/filebeat/master/configuration-autodiscover.html
+mountDockerSocket: true
+
 dnsConfig: {}
 # options:
 #   - name: ndots
